@@ -976,6 +976,13 @@ public class PatcherConfig extends Vigilant {
     public static boolean compactChat = true;
 
     @Property(
+        type = PropertyType.SWITCH, name = "Append Compact Amount",
+        description = "Appends the amount of compacted messages.",
+        category = "Screens", subcategory = "Chat"
+    )
+    public static boolean appendCompactAmount = true;
+
+    @Property(
         type = PropertyType.SWITCH, name = "Consecutive Compact Chat",
         description = "Only compact messages if they're consecutive.",
         category = "Screens", subcategory = "Chat"
@@ -1294,6 +1301,7 @@ public class PatcherConfig extends Vigilant {
             addDependency("unfocusedFPSAmount", "unfocusedFPS");
             addDependency("instantFullscreen", "windowedFullscreen");
             addDependency("tabHeight", "tabHeightAllow");
+            addDependency("appendCompactAmount", "compactChat");
             addDependency("consecutiveCompactChat", "compactChat");
             addDependency("compactChatTime", "compactChat");
             addDependency("timestampsFormat", "timestamps");

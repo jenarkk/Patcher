@@ -168,7 +168,7 @@ public class ChatHandler {
                     } else {
                         entry.messageCount++;
                         entry.lastSeenMessageMillis = currentTime;
-                        chatComponent.appendSibling(new ChatComponentIgnored(ChatColor.GRAY + " (" + decimalFormat.format(entry.messageCount) + ")"));
+                        if (PatcherConfig.appendCompactAmount) chatComponent.appendSibling(new ChatComponentIgnored(ChatColor.GRAY + " (" + decimalFormat.format(entry.messageCount) + ")"));
                     }
                 }
             }
